@@ -1,0 +1,13 @@
+*{
+  z-index: 1000;
+}
+.toolBar{
+  border-radius: 10px;
+  color: greenyellow;
+}
+.sidenavContent{
+}
+.sidenavCont{
+  height: 100%;
+  width: 100%;
+}
