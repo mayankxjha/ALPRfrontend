@@ -58,5 +58,6 @@
 }
 .webGL {
   position: absolute;
+  transition: background-color 1s linear;
 }
 
