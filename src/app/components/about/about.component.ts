@@ -97,16 +97,15 @@ export class AboutComponent implements OnInit {
     const canvas = this.canvasMain.nativeElement
     const c = this.canvasMain.nativeElement.getContext('2d');
 
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
 // Variables
     let randomColors = colorsWall[randomIntFromRange(0, 30)];
     let background = randomColor(randomColors);
     const mouse = {
-      x: innerWidth / 2 + 200,
-      y: innerHeight / 2 + 200
+      x: window.innerWidth / 2 + 200,
+      y: window.innerHeight / 2 + 200
     };
 
 // Event Listeners
@@ -125,8 +124,8 @@ export class AboutComponent implements OnInit {
     });
 
     addEventListener("resize", () => {
-      canvas.width = innerWidth;
-      canvas.height = innerHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
 
       init();
     });
