@@ -12,12 +12,14 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { UploadComponent } from './components/upload/upload.component';
+import { TheBackgroundComponent } from './components/the-background/the-background.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    UploadComponent
+    UploadComponent,
+    TheBackgroundComponent
   ],
   imports: [
     BrowserModule,
