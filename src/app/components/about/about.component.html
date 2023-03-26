@@ -1,7 +1,7 @@
 <div class="center-this">
   <router-outlet></router-outlet>
   <div class="about-container">
-    <mat-grid-list class="grid-list" cols="4" rowHeight="100px">
+    <mat-grid-list class="grid-list" cols="4" rowHeight="10vh">
       <mat-grid-tile [@divAnim]="animationConfig" class="grid-tile"
                      *ngFor="let tile of tiles"
                      [colspan]="tile.cols"
