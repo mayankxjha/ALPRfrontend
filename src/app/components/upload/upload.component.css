@@ -14,12 +14,12 @@
 .card {
   width: 400px;
   background: #000000;
-  padding: 40px;
-  border-radius: 15px;
+  padding: 4vh;
+  border-radius: 1.5vh;
   text-align: center;
   color: #333;
   position: absolute;
-  border: #e3362c solid 2px;
+  border: #e3362c solid 0.2vh;
 }
 
 .card h1 {
@@ -31,22 +31,22 @@
 }
 
 .card img {
-  width: 250px;
-  height: 250px;
+  width: 25vh;
+  height: 25vh;
   border-radius: 50%;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
   display: unset;
 }
 
 label {
   display: block;
-  width: 200px;
+  width: 20vh;
   background: #e3362c;
   color: #fff;
-  padding: 12px;
-  margin: 10px auto;
-  border-radius: 5px;
+  padding: 1.2vh;
+  margin: 1vh auto;
+  border-radius: 0.5vh;
   cursor: pointer;
 }
 
@@ -60,11 +60,11 @@ input {
 .desc h1{
   color: #ffecec;
   font-weight: bolder;
-  font-size: 40px;
+  font-size: 4vh;
 }
 .desc p{
   color: #5a9d9d;
-  font-size: 20px;
+  font-size: 2vh;
 }
 li{
   color: #ffffff;
@@ -72,22 +72,22 @@ li{
 .predict{
   transform: translateY(20px);
   display: block;
-  width: 100px;
+  width: 10vh;
   background: #e3362c;
   color: #fff;
-  padding: 12px;
-  margin: 10px auto;
-  border-radius: 5px;
+  padding: 1.2vh;
+  margin: 1vh auto;
+  border-radius: 0.5vh;
   cursor: pointer;
 }
 .predictEncore{
-  transform: translateY(20px);
+  transform: translateY(2vh);
   display: block;
-  width: 100px;
+  width: 10vh;
   background: #e3362c;
   color: #fff;
-  padding: 12px;
-  margin: 10px auto;
-  border-radius: 5px;
+  padding: 1.2vh;
+  margin: 1vh auto;
+  border-radius: 0.5vh;
   cursor: pointer;
 }
