@@ -1,4 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import * as gsap from "gsap"
 
 @Component({
   selector: 'app-the-background',
@@ -66,14 +67,13 @@ export class TheBackgroundComponent implements OnInit{
       mouse.y = event.clientY + 200;
     });
 
-    addEventListener("mousedown", () => {
+    setInterval( () => {
       randomColors = colorsWall[randomIntFromRange(0, 30)];
       particles.forEach(particle => {
         particle.color = randomColor(randomColors);
       });
-
       background = randomColor(randomColors);
-    });
+    }, 5000);
 
     addEventListener("resize", () => {
       canvas.width = innerWidth;
@@ -145,10 +145,10 @@ export class TheBackgroundComponent implements OnInit{
     }
 // Animation Loop
     let ticker = 0;
-
     function animate5() {
       requestAnimationFrame(animate5);
-      c.fillStyle = background;
+      gsap.TweenLite.to(c, 2, {fillStyle: background});
+      // c.fillStyle = background;
       c.fillRect(0, 0, canvas.width, canvas.height);
 
       c.save();
