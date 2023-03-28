@@ -29,7 +29,7 @@ import {animate, keyframes, state, style, transition, trigger} from "@angular/an
     })),
     transition('neutral <=> *', animate(700))
   ]),
-    trigger('divState', [
+    trigger('divStage', [
       state('needed', style(
         {'transform': 'translate(200px,0px)', 'opacity': '1'})),
       state('notNeeded', style(
@@ -40,9 +40,15 @@ export class UploadComponent implements OnInit {
   @ViewChild('imgTag', {static: true}) imgTag: ElementRef<HTMLImageElement>;
   @ViewChild('inputTag', {static: true}) inputTag: ElementRef<HTMLInputElement>;
   divStage = 'notNeeded'
+  divState = 'neutral'
 
   reset(){
     this.divStage = 'notNeeded'
+    this.divState = 'neutral'
+  }
+  dummy(){
+    this.divStage = 'needed'
+    this.divState = 'Glioma'
   }
   ngOnInit() {
     this.inputTag.nativeElement.onchange = () => {

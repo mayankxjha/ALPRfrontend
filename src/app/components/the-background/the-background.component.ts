@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import * as gsap from "gsap"
+import {gsap} from "gsap"
 
 @Component({
   selector: 'app-the-background',
@@ -147,7 +147,8 @@ export class TheBackgroundComponent implements OnInit{
     let ticker = 0;
     function animate5() {
       requestAnimationFrame(animate5);
-      gsap.TweenLite.to(c, 2, {fillStyle: background});
+      const tl = gsap.timeline({defaults: {duration: 2}})
+      tl.to(c, {fillStyle: background});
       // c.fillStyle = background;
       c.fillRect(0, 0, canvas.width, canvas.height);
 

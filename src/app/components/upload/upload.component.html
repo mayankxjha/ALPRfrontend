@@ -1,11 +1,11 @@
 <div class="picUpload">
-  <div class="card">
+  <div [@divState]="divState" class="card">
     <h1>Upload an License Plate</h1>
     <p>Upload an image for detection</p>
     <img #imgTag src="https://picsum.photos/400">
     <label for="input-image">Upload image</label>
     <input #inputTag type="file" accept="image/jpeg, imgae/png, image/jpg" id="input-image">
-    <button *ngIf="divStage === 'notNeeded'" class="predict">Detect</button>
+    <button *ngIf="divStage === 'notNeeded'" (click)="dummy()" class="predict">Detect</button>
     <button *ngIf="divStage === 'needed'"  class="predictEncore" (click)="reset()">Classify another?</button>
   </div>
 </div>

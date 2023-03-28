@@ -4,7 +4,7 @@
 
 .picUpload {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   background: #000000;
   align-items: center;
@@ -12,14 +12,14 @@
 }
 
 .card {
-  width: 400px;
+  width: 25em;
   background: #000000;
   padding: 4vh;
-  border-radius: 1.5vh;
+  border-radius: 1.5em;
   text-align: center;
   color: #333;
   position: absolute;
-  border: #e3362c solid 0.2vh;
+  border: #e3362c solid 0.23em;
 }
 
 .card h1 {
@@ -31,21 +31,21 @@
 }
 
 .card img {
-  width: 25vh;
-  height: 25vh;
+  width: 17em;
+  height:17em;
   border-radius: 50%;
-  margin-top: 4vh;
-  margin-bottom: 3vh;
+  margin-top: 3.5em;
+  margin-bottom: 2.5em;
   display: unset;
 }
 
 label {
   display: block;
-  width: 20vh;
+  width: 10em;
   background: #e3362c;
   color: #fff;
-  padding: 1.2vh;
-  margin: 1vh auto;
+  padding: 1.0em;
+  margin: 0.7em auto;
   border-radius: 0.5vh;
   cursor: pointer;
 }
@@ -60,11 +60,11 @@ input {
 .desc h1{
   color: #ffecec;
   font-weight: bolder;
-  font-size: 4vh;
+  font-size: 4em;
 }
 .desc p{
   color: #5a9d9d;
-  font-size: 2vh;
+  font-size: 1.8em;
 }
 li{
   color: #ffffff;
@@ -72,22 +72,22 @@ li{
 .predict{
   transform: translateY(20px);
   display: block;
-  width: 10vh;
+  width: 10em;
   background: #e3362c;
   color: #fff;
-  padding: 1.2vh;
-  margin: 1vh auto;
-  border-radius: 0.5vh;
+  padding: 1.0em;
+  margin: 0.8em auto;
+  border-radius: 0.5em;
   cursor: pointer;
 }
 .predictEncore{
-  transform: translateY(2vh);
+  transform: translateY(2em);
   display: block;
-  width: 10vh;
+  width: 8em;
   background: #e3362c;
   color: #fff;
-  padding: 1.2vh;
-  margin: 1vh auto;
-  border-radius: 0.5vh;
+  padding: 1.0em;
+  margin: 0.8em auto;
+  border-radius: 0.4em;
   cursor: pointer;
 }
