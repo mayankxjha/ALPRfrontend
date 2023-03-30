@@ -13,13 +13,15 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { UploadComponent } from './components/upload/upload.component';
 import { TheBackgroundComponent } from './components/the-background/the-background.component';
+import { CursorComponent } from './components/cursor/cursor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     UploadComponent,
-    TheBackgroundComponent
+    TheBackgroundComponent,
+    CursorComponent
   ],
   imports: [
     BrowserModule,

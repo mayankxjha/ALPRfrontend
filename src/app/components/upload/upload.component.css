@@ -90,3 +90,6 @@ li{
   border-radius: 0.4em;
   cursor: pointer;
 }
+canvas{
+  position: absolute;
+}

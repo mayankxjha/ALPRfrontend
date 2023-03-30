@@ -3,13 +3,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {AboutComponent} from "./components/about/about.component";
 import {UploadComponent} from "./components/upload/upload.component";
 import {TheBackgroundComponent} from "./components/the-background/the-background.component";
+import {CursorComponent} from "./components/cursor/cursor.component";
 
 const routes: Routes = [{
-  path: '', component: AboutComponent, children: [{
-    path: '', component: TheBackgroundComponent
-  }]
+  path: '', component: AboutComponent, children: [
+    {path: '', component: TheBackgroundComponent}]
 },
-  {path: 'upload', component: UploadComponent}];
+  {path: 'upload', component: UploadComponent, children:[
+      {path: '', component: CursorComponent}
+    ]}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

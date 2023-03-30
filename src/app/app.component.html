@@ -7,11 +7,29 @@
   </mat-toolbar>
   <mat-drawer #drawer class="sidenav" mode="side">
     <div class="sidenavContent">
-      <mat-nav-list class="sidenavList">
-        <a class="sidenavListLinks" (click)="drawer.toggle()" mat-list-item [routerLink]="['']">About</a>
-        <a class="sidenavListLinks" (click)="drawer.toggle()" mat-list-item [routerLink]="['', 'upload']">License
-          Plate Detection</a>
-      </mat-nav-list>
+      <div class="options">
+        <input type="radio" name="option" id="red" />
+        <label for="red" style="--color: red" [routerLink]="['']">About</label>
+
+        <input type="radio" name="option" id="yellow" />
+        <label for="yellow" style="--color: yellow" [routerLink]="['','upload']">Image Detection</label>
+
+        <input type="radio" name="option" id="pink" />
+        <label for="pink" style="--color: pink">Pink</label>
+
+        <input type="radio" name="option" id="green" />
+        <label for="green" style="--color: green">Green</label>
+
+        <input type="radio" name="option" id="orange" />
+        <label for="orange" style="--color: orange">Orange</label>
+
+        <input type="radio" name="option" id="purple" />
+        <label for="purple" style="--color: purple">Purple</label>
+
+        <input type="radio" name="option" id="blue" />
+        <label for="blue" style="--color: blue">Blue</label>
+      </div>
+      <canvas #part id="particles"></canvas>
     </div>
   </mat-drawer>
   <router-outlet></router-outlet>
