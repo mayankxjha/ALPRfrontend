@@ -21,7 +21,7 @@
   border-image: linear-gradient(to top, #ff3434, darkorchid) 1;
 }
 .grid-list {
-  top: 9vh;
+  top: 5em;
 }
 
 .grid-tile {
