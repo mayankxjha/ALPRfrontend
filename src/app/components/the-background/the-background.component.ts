@@ -10,37 +10,38 @@ export class TheBackgroundComponent implements OnInit{
   @ViewChild('canvas', {static: true}) canvasMain: ElementRef<HTMLCanvasElement>;
   wallPMaker() {
     const colorsWall = [
-      ["#ecd078", "#d95b43", "#c02942", "#542437", "#53777a"],
-      ["#556270", "#4ecdc4", "#c7f464", "#ff6b6b", "#c44d58"],
-      ["#e8ddcb", "#cdb380", "#036564", "#033649", "#031634"],
-      ["#ffffff", "#cbe86b", "#f2e9e1", "#1c140d", "#cbe86b"],
-      ["#efffcd", "#dce9be", "#555152", "#2e2633", "#99173c"],
-      ["#00a8c6", "#40c0cb", "#f9f2e7", "#aee239", "#8fbe00"],
-      ["#fad089", "#ff9c5b", "#f5634a", "#ed303c", "#3b8183"],
-      ["#d1e751", "#ffffff", "#000000", "#4dbce9", "#26ade4"],
-      ["#1b676b", "#519548", "#88c425", "#bef202", "#eafde6"],
-      ["#bcbdac", "#cfbe27", "#f27435", "#f02475", "#3b2d38"],
-      ["#2a044a", "#0b2e59", "#0d6759", "#7ab317", "#a0c55f"],
-      ["#a3a948", "#edb92e", "#f85931", "#ce1836", "#009989"],
-      ["#e8d5b7", "#0e2430", "#fc3a51", "#f5b349", "#e8d5b9"],
-      ["#300030", "#480048", "#601848", "#c04848", "#f07241"],
-      ["#3e4147", "#fffedf", "#dfba69", "#5a2e2e", "#2a2c31"],
+      //["#ecd078", "#d95b43", "#c02942", "#542437", "#53777a"],
+      //["#556270", "#4ecdc4", "#c7f464", "#ff6b6b", "#c44d58"],
+      //["#e8ddcb", "#cdb380", "#036564", "#033649", "#031634"],
+      //["#ffffff", "#cbe86b", "#f2e9e1", "#1c140d", "#cbe86b"],
+      //["#efffcd", "#dce9be", "#555152", "#2e2633", "#99173c"],
+      //["#00a8c6", "#40c0cb", "#f9f2e7", "#aee239", "#8fbe00"],
+      //["#fad089", "#ff9c5b", "#f5634a", "#ed303c", "#3b8183"],
+      //["#d1e751", "#ffffff", "#000000", "#4dbce9", "#26ade4"],
+      //["#1b676b", "#519548", "#88c425", "#bef202", "#eafde6"],
+      //["#bcbdac", "#cfbe27", "#f27435", "#f02475", "#3b2d38"],
+      //["#2a044a", "#0b2e59", "#0d6759", "#7ab317", "#a0c55f"],
+      //["#a3a948", "#edb92e", "#f85931", "#ce1836", "#009989"],
+      //["#e8d5b7", "#0e2430", "#fc3a51", "#f5b349", "#e8d5b9"],
+      //["#300030", "#480048", "#601848", "#c04848", "#f07241"],
+      //["#3e4147", "#fffedf", "#dfba69", "#5a2e2e", "#2a2c31"],
       ["#fc354c", "#29221f", "#13747d", "#0abfbc", "#fcf7c5"],
-      ["#1c2130", "#028f76", "#b3e099", "#ffeaad", "#d14334"],
+      ["#1c2130", "#028f76", "#b3e099", "#3d0606", "#d14334"],
       ["#1c0113", "#6b0103", "#a30006", "#c21a01", "#f03c02"],
       ["#000000", "#9f111b", "#b11623", "#292c37", "#cccccc"],
       ["#f6f6f6", "#e8e8e8", "#333333", "#990100", "#b90504"],
-      ["#413d3d", "#040004", "#c8ff00", "#fa023c", "#4b000f"],
+      ["#413d3d", "#040004", "#3d5400", "#fa023c", "#4b000f"],
       ["#a8a7a7", "#cc527a", "#e8175d", "#474747", "#363636"],
       ["#f8edd1", "#d88a8a", "#474843", "#9d9d93", "#c5cfc6"],
       ["#4e4d4a", "#353432", "#94ba65", "#2790b0", "#2b4e72"],
-      ["#0ca5b0", "#4e3f30", "#fefeeb", "#f8f4e4", "#a5b3aa"],
-      ["#edf6ee", "#d1c089", "#b3204d", "#412e28", "#151101"],
-      ["#fffbb7", "#a6f6af", "#66b6ab", "#5b7c8d", "#4f2958"],
-      ["#ff003c", "#ff8a00", "#fabe28", "#88c100", "#00c176"],
+      //["#0ca5b0", "#4e3f30", "#fefeeb", "#f8f4e4", "#a5b3aa"],
+      //["#edf6ee", "#d1c089", "#b3204d", "#412e28", "#151101"],
+      //["#fffbb7", "#a6f6af", "#66b6ab", "#5b7c8d", "#4f2958"],
+      //["#ff003c", "#ff8a00", "#fabe28", "#88c100", "#00c176"],
       ["#30261c", "#403831", "#36544f", "#1f5f61", "#0b8185"],
-      ["#d1313d", "#e5625c", "#f9bf76", "#8eb2c5", "#615375"],
-      ["#aaff00", "#ffaa00", "#ff00aa", "#aa00ff", "#00aaff"]];
+      //["#d1313d", "#e5625c", "#f9bf76", "#8eb2c5", "#615375"],
+      //["#aaff00", "#ffaa00", "#ff00aa", "#aa00ff", "#00aaff"]
+    ];
 
 
 // Initial Setup
@@ -54,7 +55,7 @@ export class TheBackgroundComponent implements OnInit{
     // canvas.style.height = '100%'
 
 // Variables
-    let randomColors = colorsWall[randomIntFromRange(0, 30)];
+    let randomColors = colorsWall[randomIntFromRange(0, 9)];
     let background = randomColor(randomColors);
     const mouse = {
       x: innerWidth / 2 + 200,
@@ -68,7 +69,7 @@ export class TheBackgroundComponent implements OnInit{
     });
 
     setInterval( () => {
-      randomColors = colorsWall[randomIntFromRange(0, 30)];
+      randomColors = colorsWall[randomIntFromRange(0, 9)];
       particles.forEach(particle => {
         particle.color = randomColor(randomColors);
       });
@@ -140,7 +141,7 @@ export class TheBackgroundComponent implements OnInit{
       for (let i = 0; i < 800; i++) {
         const distance = randomIntFromRange(80, 200);
         const radius = Math.random() * 5;
-        particles.push(new Particle(canvas.width + 400, canvas.height + 400, distance, distance, radius, randomColor(colorsWall[12])));
+        particles.push(new Particle(canvas.width + 400, canvas.height + 400, distance, distance, radius, randomColor(colorsWall[1])));
       }
     }
 // Animation Loop

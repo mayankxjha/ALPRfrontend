@@ -16,16 +16,16 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  border-width: 0.3vw;
+  border-width: 0.6vw;
   border-style: solid;
   border-image: linear-gradient(to top, #ff3434, darkorchid) 1;
 }
 .grid-list {
-  top: 9vh
+  top: 9vh;
 }
 
 .grid-tile {
-  border-radius: 1vw;
+  border-radius: 0.7vw;
   mix-blend-mode: difference;
   transition: transform 1s;
 }
@@ -39,12 +39,12 @@
 .div-tile p{
   mix-blend-mode: difference;
   font-weight: bolder;
-  font-size: 1.8vh;
+  font-size: 1.1vw;
 }
 .div-tile ul{
   mix-blend-mode: difference;
   font-weight: bolder;
-  font-size: 2.2vh;
+  font-size: 1.2vw;
 }
 .grid-tile:hover{
   filter: grayscale(1);
