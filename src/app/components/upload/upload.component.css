@@ -12,14 +12,14 @@
 }
 
 .card {
-  width: 25em;
+  width: 23%;
   background: #000000;
-  padding: 4vh;
-  border-radius: 1.5em;
+  padding: 2.6%;
+  border-radius: 6%;
   text-align: center;
   color: #333;
   position: absolute;
-  border: #e3362c solid 0.23em;
+  border: #e3362c solid 0.4em;
 }
 
 .card h1 {
@@ -31,22 +31,21 @@
 }
 
 .card img {
-  width: 17em;
-  height:17em;
+  width: 89%;
+  height:89%;
   border-radius: 50%;
-  margin-top: 3.5em;
-  margin-bottom: 2.5em;
-  display: unset;
+  margin-top: 3%;
+  margin-bottom: 6%;
 }
 
 label {
   display: block;
-  width: 10em;
+  width: 80%;
   background: #e3362c;
   color: #fff;
-  padding: 1.0em;
-  margin: 0.7em auto;
-  border-radius: 0.5vh;
+  padding: 4%;
+  margin: 2% auto;
+  border-radius: 0.5em;
   cursor: pointer;
 }
 
@@ -60,11 +59,11 @@ input {
 .desc h1{
   color: #ffecec;
   font-weight: bolder;
-  font-size: 4em;
+  font-size: 2%;
 }
 .desc p{
   color: #5a9d9d;
-  font-size: 1.8em;
+  font-size: 3%;
 }
 li{
   color: #ffffff;
@@ -72,7 +71,7 @@ li{
 .predict{
   transform: translateY(20px);
   display: block;
-  width: 10em;
+  width: 60%;
   background: #e3362c;
   color: #fff;
   padding: 1.0em;
@@ -83,7 +82,7 @@ li{
 .predictEncore{
   transform: translateY(2em);
   display: block;
-  width: 8em;
+  width: 80%;
   background: #e3362c;
   color: #fff;
   padding: 1.0em;
