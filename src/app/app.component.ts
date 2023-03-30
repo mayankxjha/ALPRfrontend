@@ -11,8 +11,8 @@ export class AppComponent implements OnInit {
   @ViewChild('TB', {static: true}) toolB: ElementRef<MatToolbar>
 
   ngOnInit() {
+    console.log(window.screen.availWidth, window.screen.availHeight)
     setTimeout(() => {
-      console.log(this.toolB)
       const tl = gsap.timeline({defaults: {duration: 1}})
       tl.fromTo("mat-toolbar", {x: "-100%"}, {x: "0%"});
     }, 10)
