@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
     console.log(window.screen.availWidth, window.screen.availHeight)
     setTimeout(() => {
       const tl = gsap.timeline({defaults: {duration: 1}})
-      tl.fromTo("mat-toolbar", {x: "-100%"}, {x: "0%"});
+      tl.fromTo("mat-toolbar", {y: "-100%"}, {y: "0%"});
     }, 10)
   }
 }

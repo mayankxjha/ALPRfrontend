@@ -2,6 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
 import {SmolPart} from "../../shared/smolPart.model";
+import axios from "axios";
 
 
 @Component({
@@ -48,7 +49,12 @@ export class UploadComponent implements OnInit {
     this.divStage = 'notNeeded'
     this.divState = 'neutral'
   }
-  dummy(){
+  async dummy(){
+    const fd = new FormData()
+    fd.append("file1", this.inputTag.nativeElement.files[0])
+    await axios.post("http://127.0.0.1:3000/after", fd).then(data => {
+      console.log(data)
+    })
     this.divStage = 'needed'
     this.divState = 'Glioma'
   }
