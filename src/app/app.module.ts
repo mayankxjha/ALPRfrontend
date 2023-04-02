@@ -14,6 +14,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import { UploadComponent } from './components/upload/upload.component';
 import { TheBackgroundComponent } from './components/the-background/the-background.component';
 import { CursorComponent } from './components/cursor/cursor.component';
+import { MapsComponent } from './components/maps/maps.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CursorComponent } from './components/cursor/cursor.component';
     AboutComponent,
     UploadComponent,
     TheBackgroundComponent,
-    CursorComponent
+    CursorComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,
