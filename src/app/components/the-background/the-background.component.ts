@@ -1,14 +1,20 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {gsap} from "gsap"
-import {ParticleS} from "../../shared/particleS.model";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-the-background',
   templateUrl: './the-background.component.html',
-  styleUrls: ['./the-background.component.css']
+  styleUrls: ['./the-background.component.css'],
+  animations: [trigger('canVas', [state('notLoaded', style({
+    opacity: 0.2,
+  })),
+    state('loaded', style({
+      opacity: 1
+    })), transition('notLoaded => loaded', animate(900))])]
 })
-export class TheBackgroundComponent implements OnInit{
+export class TheBackgroundComponent implements OnInit {
   @ViewChild('canvas', {static: true}) canvasMain: ElementRef<HTMLCanvasElement>;
+  loadCanvas = 'notLoaded'
   wallPMaker() {
     const colorsWall = [
       ["#ecd078", "#d95b43", "#c02942", "#542437", "#53777a"],
@@ -44,7 +50,6 @@ export class TheBackgroundComponent implements OnInit{
       ["#aaff00", "#ffaa00", "#ff00aa", "#aa00ff", "#00aaff"]
     ];
 
-
 // Initial Setup
 //     console.log(colorsWall.length)
     const canvas = this.canvasMain.nativeElement
@@ -66,7 +71,6 @@ export class TheBackgroundComponent implements OnInit{
       mouse.x = event.clientX + 200;
       mouse.y = event.clientY + 200;
     });
-
     setInterval(() => {
       randomColors = colorsWall[randomIntFromRange(0, 9)];
       particles.forEach(particle => {
@@ -127,8 +131,10 @@ export class TheBackgroundComponent implements OnInit{
         c.closePath();
       };
     }
+
 // Implementation
     let particles;
+
     function init() {
       particles = [];
       for (let i = 0; i < 800; i++) {
@@ -159,6 +165,7 @@ export class TheBackgroundComponent implements OnInit{
     animate5();
   }
   ngOnInit() {
+    setTimeout(()=>this.loadCanvas='loaded', 1000)
     this.wallPMaker()
   }
 }

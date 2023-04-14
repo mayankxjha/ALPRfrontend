@@ -1,6 +1,6 @@
 <div class="center-this">
   <router-outlet></router-outlet>
-  <div class="about-container">
+  <div class="grid-list-container">
     <mat-grid-list class="grid-list" cols="4" rowHeight="10vh">
       <mat-grid-tile [@divAnim]="animationConfig" class="grid-tile"
                      *ngFor="let tile of tiles"
@@ -9,7 +9,7 @@
                      [style.background]="tile.color">
         <div class="div-tile">
           <h1>{{tile.text}}</h1>
-          <p *ngIf="tile.text != 'Applications'; else para">{{descText[tile.text]}}</p>
+          <p *ngIf="tile.text != 'Applications' &&  tile.text != 'Key Features'; else para">{{descText[tile.text]}}</p>
           <ng-template #para>
             <ul>
               <li *ngFor="let item of descText[tile.text]">{{item}}</li>
@@ -18,5 +18,30 @@
         </div>
       </mat-grid-tile>
     </mat-grid-list>
+  </div>
+  <div class="follow-up">
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
+    <p class="follow-up-hidden">a</p>
   </div>
 </div>

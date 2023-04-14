@@ -10,7 +10,7 @@ import {animate, keyframes, state, style, transition, trigger} from "@angular/an
     trigger('divAnim', [
       state('inBounds', style({opacity: 1, scale: 1})),
       state('outOfBounds', style({opacity: 0, scale: 0.2, transform: 'translateZ(-500px)'})),
-      transition('outOfBounds <=> inBounds', [
+      transition('outOfBounds => inBounds', [
         animate('{{time}}ms ease-in', keyframes([
           style({opacity: 0.2, scale: 0.2}),
           style({opacity: 0.4, scale: 0.4}),
@@ -20,17 +20,17 @@ import {animate, keyframes, state, style, transition, trigger} from "@angular/an
         ]))])
     ])]
 })
-export class AboutComponent implements OnInit{
+export class AboutComponent implements OnInit {
 
   tiles: Tile[] = [
     {text: 'How it works?', cols: 3, rows: 4, color: 'lightblue'},
     {text: 'Applications', cols: 1, rows: 4, color: 'lightgreen'},
-    {text: 'Privacy Concerns', cols: 3, rows: 4, color: 'lightpink'},
+    {text: 'Key Features', cols: 3, rows: 4, color: 'lightpink'},
     {text: 'Accuracy', cols: 1, rows: 4, color: '#DDBDF1'},
   ];
   animationConfig = {
     value: 'outOfBounds', params: {
-      time: Math.floor(Math.random() * 1000) + 200,
+      time: 750,
     }
   }
   descText: {} = {
@@ -44,19 +44,30 @@ export class AboutComponent implements OnInit{
       '\n' +
       'It\'s worth noting that ALPR technology has raised concerns about privacy and civil liberties, as the capture and storage of license plate data can be used to track individuals\' movements and activities. As a result, there are often regulations in place to govern the use and storage of ALPR data.',
     'Applications': ['Law Enforcement', 'Parking management', 'Toll collection', 'Border control', 'Vehicle tracking', 'Security'],
-    'Privacy Concerns': 'Surveillance and tracking: ALPR technology can be used to track the movement of vehicles and individuals. This can raise concerns about government or corporate surveillance and the potential for abuse.\n' +
-      '\n' +
-      'Data retention: ALPR systems can collect and store large amounts of data, including license plate images, timestamps, and location information. This data can be used to build a detailed history of a person\'s movements, which can raise concerns about privacy and data security.\n' +
-      '\n' +
-      'False positives and misidentification: ALPR systems are not always accurate, and false positives and misidentification can occur. This can lead to innocent people being wrongly flagged as suspects or criminals.\n' +
-      '\n' +
-      'Sharing of data: ALPR data can be shared among different agencies and organizations, including law enforcement, parking authorities, and toll collection companies. This can raise concerns about data sharing and the potential for misuse or abuse.\n' +
-      '\n' +
-      'Lack of transparency: ALPR technology is often used without public knowledge or consent. This can raise concerns about transparency and accountability.\n' +
-      '\n',
+    'Key Features': ['Enhanced security: ALPR can be used to identify vehicles that are involved in criminal activities or are suspected of being used in such activities.',
+      'Improved traffic management: ALPR can help traffic authorities to monitor traffic flow and detect traffic violations, such as speeding or running red lights.',
+      'Efficient parking management: ALPR can be used to automate parking management systems, making it easier for drivers to find available parking spaces and for parking operators to manage their operations more efficiently.',
+      'Cost savings: By automating certain tasks, such as toll collection or parking management, ALPR can help reduce labor costs and improve operational efficiency.'],
     'Accuracy': 'The accuracy of ALPR can vary depending on several factors such as the quality of the camera, lighting conditions, speed of the moving vehicle, and the accuracy of the software used. Generally, when conditions are optimal, ALPR can have a high accuracy rate of 95% or more.'
   }
+
+  scrollAnim() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(entry)
+          entry.target.classList.add('follow-up-show')
+        } else {
+          entry.target.classList.remove('follow-up-show')
+        }
+      })
+    })
+    const gridTiles = document.querySelectorAll('.follow-up-hidden');
+    gridTiles.forEach(el => observer.observe(el))
+  }
+
   ngOnInit() {
+    this.scrollAnim()
     setTimeout(() => {
       this.animationConfig = {value: 'inBounds', params: {time: 750}}
     }, 10)
