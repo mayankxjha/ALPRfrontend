@@ -3,7 +3,7 @@
   <div class="grid-list-container">
     <mat-grid-list class="grid-list" cols="4" rowHeight="10vh">
       <mat-grid-tile [@divAnim]="animationConfig" class="grid-tile"
-                     *ngFor="let tile of tiles"
+                     *ngFor="let tile of tiles.slice(0, 1)"
                      [colspan]="tile.cols"
                      [rowspan]="tile.rows"
                      [style.background]="tile.color">
@@ -19,29 +19,22 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
-  <div class="follow-up">
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
-    <p class="follow-up-hidden">a</p>
+</div>
+<div class="follow-up">
+  <div class="applications">
+    <h1 class="follow-up-hidden">{{tiles[1].text}}</h1>
+    <p *ngFor="let text of descText[tiles[1].text]" class="follow-up-hidden">{{text}}</p>
+  </div>
+  <div class="key-features">
+    <h1 class="follow-up-hidden">{{tiles[2].text}}</h1>
+    <p *ngFor="let text of descText[tiles[2].text]" class="follow-up-hidden">{{text}}</p>
+    </div>
+  <div class="uses">
+    <h1 class="follow-up-hidden">{{tiles[4].text}}</h1>
+    <p class="follow-up-hidden">{{descText[tiles[4].text]}}</p>
+  </div>
+  <div class="privacy-concerns">
+    <h1 class="follow-up-hidden">{{tiles[5].text}}</h1>
+    <p *ngFor="let text of descText[tiles[5].text]" class="follow-up-hidden">{{text}}</p>
   </div>
 </div>
