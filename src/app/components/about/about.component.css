@@ -41,12 +41,12 @@
 }
 .follow-up-hidden{
   opacity: 0;
-  transform: translateX(-50%);
+  /*transform: translate(-50%, 0%);*/
 }
 .follow-up-show{
-  opacity: 1;
-  transform: translateX(0%);
-  transition: all 1s;
+  /*opacity: 1;*/
+  /*transform: translateX(0%);*/
+  /*transition: all 1s;*/
 }
 .div-tile h1{
   mix-blend-mode: difference;

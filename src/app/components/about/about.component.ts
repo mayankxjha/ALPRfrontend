@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Tile} from "../../shared/tile.model";
 import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
+import anime from 'animejs/lib/anime.es';
 
 @Component({
   selector: 'app-about',
@@ -36,12 +37,12 @@ export class AboutComponent implements OnInit {
     }
   }
   descText: {} = {
-    'Privacy Concerns':['Surveillance: ALPR technology can be used to track the movements of vehicles and individuals, even if they are not suspected of any wrongdoing. This can lead to a chilling effect on free speech and association, as people may avoid attending certain events or visiting certain locations out of fear of being tracked.',
-    'Data retention: ALPR data is typically stored in a database, and there are concerns that this data could be used for purposes other than those for which it was collected. For example, law enforcement agencies could potentially use ALPR data to identify individuals who attended political rallies or protests.',
-    'Data sharing: ALPR data can be shared between different law enforcement agencies, which can increase the risk of misuse or abuse of the data. There have been instances of ALPR data being shared with immigration authorities, for example, which can lead to targeting of immigrant communities.',
-    'Inaccuracy: While ALPR technology has become increasingly accurate over time, there are still concerns about false positives and misidentification. This can lead to innocent individuals being mistakenly targeted for investigation or surveillance.',
-    'Lack of transparency: There are concerns that ALPR systems are being deployed without adequate public oversight or transparency. This can make it difficult for individuals to know when and where they are being tracked, and for what purposes.'],
-    'Uses':'ALPR technology is used by law enforcement agencies for a variety of purposes, including tracking stolen vehicles, locating suspects in criminal investigations, enforcing parking regulations, and detecting unregistered or uninsured vehicles.',
+    'Privacy Concerns': ['Surveillance: ALPR technology can be used to track the movements of vehicles and individuals, even if they are not suspected of any wrongdoing. This can lead to a chilling effect on free speech and association, as people may avoid attending certain events or visiting certain locations out of fear of being tracked.',
+      'Data retention: ALPR data is typically stored in a database, and there are concerns that this data could be used for purposes other than those for which it was collected. For example, law enforcement agencies could potentially use ALPR data to identify individuals who attended political rallies or protests.',
+      'Data sharing: ALPR data can be shared between different law enforcement agencies, which can increase the risk of misuse or abuse of the data. There have been instances of ALPR data being shared with immigration authorities, for example, which can lead to targeting of immigrant communities.',
+      'Inaccuracy: While ALPR technology has become increasingly accurate over time, there are still concerns about false positives and misidentification. This can lead to innocent individuals being mistakenly targeted for investigation or surveillance.',
+      'Lack of transparency: There are concerns that ALPR systems are being deployed without adequate public oversight or transparency. This can make it difficult for individuals to know when and where they are being tracked, and for what purposes.'],
+    'Uses': 'ALPR technology is used by law enforcement agencies for a variety of purposes, including tracking stolen vehicles, locating suspects in criminal investigations, enforcing parking regulations, and detecting unregistered or uninsured vehicles.',
     'How it works?': 'A camera captures an image of a vehicle\'s license plate as it passes by.\n' +
       '\n' +
       'The ALPR software analyzes the image and identifies the characters on the license plate using optical character recognition (OCR) technology.\n' +
@@ -65,6 +66,12 @@ export class AboutComponent implements OnInit {
         if (entry.isIntersecting) {
           // console.log(entry)
           entry.target.classList.add('follow-up-show')
+          anime({
+            targets: entry.target,
+            translateX: ['-50%', '0%'],
+            opacity: 1,
+          })
+          observer.unobserve(entry.target);
         } else {
           entry.target.classList.remove('follow-up-show')
         }
